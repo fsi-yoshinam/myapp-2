@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import Canvas from "./canvas";
-import '../App.css'
+import '../App.css';
+import sample_video from "../components/video/sample.mp4";
 
 const ModalButton: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -25,7 +26,7 @@ const ModalButton: React.FC = () => {
           <div style={{position: 'relative'}} className="modal-content">
             <video ref={videoRef} controls muted>
               {/* ↓動画ファイルパス */}
-            <source src="sample.mp4" type="video/mp4"/>
+            <source src={sample_video} type="video/mp4"/>
             </video>
             <Canvas videoRef={videoRef} />
             <button onClick={closeModal}>モーダルを閉じる</button>
